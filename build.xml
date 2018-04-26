@@ -23,7 +23,7 @@
           </checkstyle>
 
       </target>
-      <target name="junit">
+      <target name="junit" depends="compile">
         <junit printsummary="yes" haltonfailure="yes">
             <classpath>
                 <pathelement location="build/classes"/>
@@ -31,8 +31,8 @@
                 <pathelement path="WebContent/WEB-INF/lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
             </classpath>
 
-            <test name="junit.TestCalculator" haltonfailure="no" outfile="TestCalculator_JUnitResult.txt">
-                <formatter type="plain"/>
+            <test name="junit.TestCalculator" haltonfailure="no" outfile="TestCalculator_JUnitResult">
+                <formatter type="xml"/>
             </test>
         </junit>
 
